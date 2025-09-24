@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Police principale */
 @font-face {
   font-family: "Noto Serif";
@@ -10,7 +11,7 @@
 /* Styles */
 body {
   font-family: "Noto Serif", serif;
-  font-size: 67px;
+  font-size: 1.125rem;
   text-align: center;
   color: #6F9A58;
   background-color: #D1D1D1;
@@ -18,7 +19,24 @@ body {
 
 footer {
   font-family: "Noto Serif", serif;
-  font-size: 67px;
+  font-size: 1.125rem;
   text-align: center;
   color: #3B532F;
+}
+
+/* classes personnalisées */
+.btn-primary {
+  font-family: "Noto Serif", serif;
+  text-align: center;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: rgb(194, 194, 194);
 }/*# sourceMappingURL=style.css.map */
