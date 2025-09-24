@@ -50,4 +50,8 @@ footer {
   &:hover {
     background-color: rgb(194, 194, 194);
   }
+  &:active {
+    background-color: rgb(3, 3, 3);
+    color: white;
+  }
 }

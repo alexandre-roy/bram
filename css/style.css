@@ -39,4 +39,8 @@ footer {
 }
 .btn-primary:hover {
   background-color: rgb(194, 194, 194);
+}
+.btn-primary:active {
+  background-color: rgb(3, 3, 3);
+  color: white;
 }/*# sourceMappingURL=style.css.map */
