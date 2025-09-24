@@ -1,4 +1,10 @@
-/* Police principale */
+/* Polices */
+@font-face {
+  font-family: 'Outfit';
+  src: url('../fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'Noto Serif';
@@ -8,40 +14,76 @@
   font-style: normal;
 }
 
-/* Variables */
 
-$primary: #6F9A58;
-$secondary: #3B532F;
-$light: #D1D1D1;
-$dark: #1D1D1D;
-$font-primary: 'Noto Serif', serif;
+/* Variables */
+$primary: #8B52F1;
+$secondary: #9DB6C3;
+$light: #F1F2F3;
+$dark: #221F20;
+$font-primary: 'Outfit', sans-serif;
+$font-secondary: 'Noto Serif', serif;
 
 /* Styles */
-
-body {
-  font-family: $font-primary;
-  font-size: 1.125rem; // ~18px
-  text-align: center;
-  color: $primary;
-  background-color: $light;
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-footer {
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
   font-family: $font-primary;
-  font-size: 1.125rem;
+  font-size: 40px;
+  background-color: $light;
+  box-sizing: border-box;
+}
+
+
+footer{
+  width: 100%;
+  background-color: $dark;
   text-align: center;
+  font-family: $secondary;
+  color: $light;
+  font-size: 16px;
+  margin: 0px;
+  padding: 50px 0px;
+}
+
+/* Classes personnalisées */
+.text-primary{
+  color: $primary;
+}
+
+.text-secondary{
   color: $secondary;
 }
 
-/* classes personnalisées */
+.text-light{
+  color: $light;
+}
+
+.text-dark{
+  color: $dark;
+}
 
 .btn-primary {
   font-family: $font-primary;
   text-align: center;
-  color: black;
-  background-color: white;
+  color: $light;
+  background-color: $primary;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 2px 10px;
   text-decoration: none;
   display: inline-block;
   margin: 4px 2px;
