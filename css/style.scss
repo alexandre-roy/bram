@@ -1,48 +1,12 @@
+@use 'variables';
+@use 'mixins';
+@use 'class';
+@use 'fonts';
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-/* Polices */
-@font-face {
-  font-family: "Outfit";
-  src: url("../fonts/Outfit-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Noto Serif";
-  src: url("../fonts/NotoSerif-VariableFont_wdth,wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-stretch: 75% 125%;
-  font-style: normal;
-}
-
-/* Variables */
-
-$primary: #8b52f1;
-$secondary: #9db6c3;
-$light: #f1f2f3;
-$dark: #221f20;
-$font-primary: "Outfit", sans-serif;
-$font-secondary: "Noto Serif", serif;
-
-
-/* mixins */
-
-@mixin text($color){
-  color: $color;
-}
-
-@mixin button($bg, $color) {
-  background-color: $bg;
-  color: $color;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
 }
 
 /* Styles */
@@ -58,13 +22,13 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  font-family: $font-primary;
+  font-family: variables.$font-primary;
   font-size: 16px;
-  background-color: $light;
+  background-color: variables.$light;
   box-sizing: border-box;
 }
 
-h1{
+h1 {
   font-size: 2.5rem;
 }
 
@@ -72,27 +36,27 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $primary;
+  background-color: variables.$primary;
   padding: 30px 20px;
 }
 
 nav a {
-  color: $light;
+  color: variables.$light;
   text-decoration: none;
-  font-family: $font-primary;
+  font-family: variables.$font-primary;
   font-size: 1rem;
   margin: 0 15px;
   padding: 8px 12px;
-transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   border-radius: 5px;
-  background-color: $dark;
-  border: 2px solid $light;
+  background-color: variables.$dark;
+  border: 2px solid variables.$light;
 }
 
 nav a:hover {
-  background-color: $light;
-  color: $dark;
-  border-color: $dark;
+  background-color: variables.$light;
+  color: variables.$dark;
+  border-color: variables.$dark;
 }
 
 @media (max-width: 600px) {
@@ -108,40 +72,11 @@ nav a:hover {
 
 footer {
   width: 100%;
-  background-color: $dark;
+  background-color: variables.$dark;
   text-align: center;
-  font-family: $secondary;
-  color: $light;
+  font-family: variables.$secondary;
+  color: variables.$light;
   font-size: 16px;
   margin: 0px;
   padding: 50px 0px;
-}
-
-/* Classes personnalisées */
-
-.container {
-  flex: 1;
-  width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 80px 20px 20px;
-  box-sizing: border-box;
-  text-align: center;
-  overflow-x: hidden;
-}
-
-.text-primary {
-  @include text($primary);
-}
-
-.text-secondary {
-  @include text($secondary);
-}
-
-.text-light {
-  @include text($light);
-}
-
-.text-dark {
-  @include text($dark);
 }

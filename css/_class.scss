@@ -1,0 +1,31 @@
+@use 'variables';
+@use 'mixins';
+
+/* Classes personnalisées */
+
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 80px 20px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.text-primary {
+  @include mixins.text(variables.$primary);
+}
+
+.text-secondary {
+  @include mixins.text(variables.$secondary);
+}
+
+.text-light {
+  @include mixins.text(variables.$light);
+}
+
+.text-dark {
+  @include mixins.text(variables.$dark);
+}
