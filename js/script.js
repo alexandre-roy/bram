@@ -25,3 +25,5 @@ function initialisation() {
 }
 
 window.addEventListener("DOMContentLoaded", initialisation);
+
+const nav = document.getElementById('main-nav');
