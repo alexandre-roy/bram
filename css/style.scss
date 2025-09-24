@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Polices */
@@ -19,6 +21,7 @@
 }
 
 /* Variables */
+
 $primary: #8b52f1;
 $secondary: #9db6c3;
 $light: #f1f2f3;
@@ -26,34 +29,23 @@ $dark: #221f20;
 $font-primary: "Outfit", sans-serif;
 $font-secondary: "Noto Serif", serif;
 
-/* Styles */
 
-nav{
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $primary;
-  padding: 30px 20px;
+/* mixins */
+
+@mixin text($color){
+  color: $color;
 }
 
-nav a {
-  color: $light;
-  text-decoration: none;
-  font-family: $font-primary;
-  font-size: 1rem;
-  margin: 0 15px;
-  padding: 8px 12px;
-  transition: all 0.3s ease;
+@mixin button($bg, $color) {
+  background-color: $bg;
+  color: $color;
+  padding: 10px 20px;
   border-radius: 5px;
-  background-color: $dark;
-  border: 2px solid $light;
+  border: none;
+  cursor: pointer;
 }
 
-nav a:hover {
-  background-color: $light;
-  color: $dark;
-  border-color: $dark;
-}
+/* Styles */
 
 html,
 body {
@@ -67,9 +59,51 @@ body {
   display: flex;
   flex-direction: column;
   font-family: $font-primary;
-  font-size: 40px;
+  font-size: 16px;
   background-color: $light;
   box-sizing: border-box;
+}
+
+h1{
+  font-size: 2.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary;
+  padding: 30px 20px;
+}
+
+nav a {
+  color: $light;
+  text-decoration: none;
+  font-family: $font-primary;
+  font-size: 1rem;
+  margin: 0 15px;
+  padding: 8px 12px;
+transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  border-radius: 5px;
+  background-color: $dark;
+  border: 2px solid $light;
+}
+
+nav a:hover {
+  background-color: $light;
+  color: $dark;
+  border-color: $dark;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
 }
 
 footer {
@@ -90,25 +124,24 @@ footer {
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 80px 20px 20px;
   box-sizing: border-box;
   text-align: center;
   overflow-x: hidden;
 }
 
-
 .text-primary {
-  color: $primary;
+  @include text($primary);
 }
 
 .text-secondary {
-  color: $secondary;
+  @include text($secondary);
 }
 
 .text-light {
-  color: $light;
+  @include text($light);
 }
 
 .text-dark {
-  color: $dark;
+  @include text($dark);
 }
