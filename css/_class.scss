@@ -25,9 +25,20 @@
   mix-blend-mode: difference;
 }
 
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .s1{
   background-color: black;
   margin-top: 4rem;
   height: 100rem;
+  padding-top: 2rem;
 }
