@@ -11,10 +11,23 @@
   overflow-x: hidden;
 }
 
-.slogan{
+.slogan {
   font-family: v.$font-secondary;
   font-weight: 800;
   font-size: 2rem;
   margin-left: 15rem;
-  text-shadow: 0.5rem 0.5rem 2rem rgb(0, 0, 0, 0.5)
+}
+
+.dot {
+  font-size: 10rem;
+  color: white;
+  position: fixed;
+  mix-blend-mode: difference;
+}
+
+
+.s1{
+  background-color: black;
+  margin-top: 4rem;
+  height: 100rem;
 }
