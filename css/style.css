@@ -79,12 +79,13 @@
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-image: url("data:image/svg+xml;utf8,      <svg fill='white' height='12' viewBox='0 0 24 24' width='12'       xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-image: url("data:image/svg+xml;utf8, <svg fill='white' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 12px;
 }
-.lang:hover, .lang:focus {
+.lang:hover,
+.lang:focus {
   border-color: rgb(89.25, 89.25, 89.25);
   background-color: #222;
   outline: none;
@@ -106,7 +107,8 @@
 }
 @font-face {
   font-family: "PlayfairDisplay Italic";
-  src: url("../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-stretch: 75% 125%;
   font-style: normal;
@@ -162,4 +164,4 @@ footer {
   nav a {
     margin: 10px 0;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
