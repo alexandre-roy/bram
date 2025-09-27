@@ -15,22 +15,26 @@
 <body>
   <header>
     <nav>
-      <a href="mailto:team@bramdev.ca">email us</a>
+      <a id="email" href="mailto:team@bramdev.ca">email us</a>
       <p>|</p>
-      <a href="#">fr</a>
+      <select id="lang-select">
+        <option value="en">En</option>
+        <option value="fr">Fr</option>
+      </select>
     </nav>
   </header>
 
   <main class="container">
-    <h1>_bram<span class="dot">.</span></h1>
-    <p class="slogan">&nbsp;"building responsive applications masterfully"</p>
-    <section class="s1">
-      <h2 class="hidden">_our&nbsp;&nbsp;services</h2>
-    </section>
+    <div class="hero">
+      <h1>_bram<span class="dot">.</span></h1>
+      <p id="slogan" class="slogan">"building responsive applications masterfully"</p>
+    </div>
   </main>
-
+  <section class="s1">
+    <h2 id="services-title" class="hidden">_our&nbsp;&nbsp;services</h2>
+  </section>
   <footer>
-    <p>&copy; 2025 - All rights reserved</p>
+    <p id="footer-text">&copy; 2025 - All rights reserved</p>
   </footer>
 </body>
 

@@ -4,7 +4,7 @@
 /* Classes personnalisées */
 .container {
   flex: 1;
-  width: 100%;
+  width: 90%;
   max-width: 1800px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -14,9 +14,7 @@
 .slogan {
   font-family: v.$font-secondary-italic;
   font-weight: 800;
-  font-size: 2rem;
-  margin-left: 40rem;
-  margin-top: 1rem;
+  font-size: 1.5rem;
 }
 
 .dot {
@@ -35,11 +33,60 @@
 .show {
   opacity: 1;
   transform: translateY(0);
+  color: white;
+  margin-left: 13.5rem;
+  font-size: 10rem;
+  padding-top: 1.5rem;
 }
 
-.s1{
+.s1 {
   background-color: black;
   height: 100rem;
   padding-top: 2rem;
   margin-top: 4rem;
+  width: 100%;
+}
+
+.hero {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.hero h1 {
+  grid-row: 1;
+  grid-column: 1 / 2;
+  justify-self: start;
+}
+.hero p {
+  grid-row: 2;
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: start;
+}
+#lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #111;
+  color: #fff;
+  padding: 6px 32px 6px 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-image: url("data:image/svg+xml;utf8,\
+      <svg fill='white' height='12' viewBox='0 0 24 24' width='12' \
+      xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  &:hover,
+  &:focus {
+    border-color: lighten(#333, 15%);
+    background-color: #222;
+    outline: none;
+  }
 }
