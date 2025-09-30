@@ -1,63 +1,86 @@
+"use strict";
 /**
  * Fichier principale javascript
  */
-"use strict";
-
-
-const nav = document.getElementById('main-nav');
 
 const dot = document.querySelector(".dot");
 const section = document.querySelector(".s1");
-const heading = section.querySelector("h2");
-const p = section.querySelector("p");
+const servicesGrid = document.querySelector(".services-grid");
+const hiddenElements = section.querySelectorAll(".hidden");
+const heroH1 = document.querySelector(".hero h1"); // <-- new
+
+// OPTIONAL: track if the user has scrolled at least once
+let hasScrolled = false;
+window.addEventListener("scroll", () => { hasScrolled = true; }, { passive: true });
+
 /**
- * Surveille la position du point (dot) par rapport à la section des services.
- * Active ou désactive les classes CSS "active" et "show" en fonction
- * de la collision afin de déclencher les animations correspondantes.
- * La fonction se rappelle elle-même via requestAnimationFrame pour un suivi continu.
+ * Align the dot next to the right of the H1 dynamically (responsive)
+ */
+function alignDotToH1() {
+  const rect = heroH1.getBoundingClientRect();
+  const offsetX = 20; // distance from right edge of H1
+  const offsetY = -100;  // vertical offset if needed
+  dot.style.left = `${rect.right + offsetX + window.scrollX}px`;
+  dot.style.top = `${rect.top + rect.height / 2 + offsetY + window.scrollY}px`;
+}
+
+/**
+ * Met à jour la position de la dot et ajoute/retire la classe .dot-right
+ * uniquement lorsque la dot est proche de .services-grid.
+ */
+function updateDotPosition() {
+  const dotRect = dot.getBoundingClientRect();
+  const gridRect = servicesGrid.getBoundingClientRect();
+
+  const dotCenterX = dotRect.left + dotRect.width / 2;
+  const dotCenterY = dotRect.top + dotRect.height / 2;
+
+  let verticalDist;
+  if (dotCenterY < gridRect.top) verticalDist = gridRect.top - dotCenterY;
+  else if (dotCenterY > gridRect.bottom) verticalDist = dotCenterY - gridRect.bottom;
+  else verticalDist = 0;
+
+  const gridCenterX = gridRect.left + gridRect.width / 2;
+  const horizontalDist = Math.abs(dotCenterX - gridCenterX);
+
+  const triggerDist = 100;
+  const maxHorizontal = gridRect.width * 0.6;
+
+  let shouldMove = verticalDist <= triggerDist && horizontalDist <= maxHorizontal;
+
+  // Uncomment if you want to wait until the user scrolls
+  // shouldMove = shouldMove && hasScrolled;
+
+  dot.classList.toggle("dot-right", shouldMove);
+
+  requestAnimationFrame(updateDotPosition);
+}
+
+/**
+ * Surveille la collision de la dot avec la section .s1 pour activer les effets.
  */
 function checkDotCollision() {
   const dotRect = dot.getBoundingClientRect();
-  const sectionRect = heading.getBoundingClientRect();
+  const sectionRect = section.getBoundingClientRect();
 
-  if (dotRect.bottom >= sectionRect.top && dotRect.top <= sectionRect.bottom) {
-    dot.classList.add("active");
-  } else {
-    dot.classList.remove("active");
-  }
+  const isActive = dotRect.bottom >= sectionRect.top && dotRect.top <= sectionRect.bottom;
 
-  if (dot.classList.contains("active")) {
-    heading.classList.add("show");
-  } else {
-    heading.classList.remove("show");
-  }
+  dot.classList.toggle("active", isActive);
+
+  hiddenElements.forEach(el => el.classList.toggle("show", isActive));
 
   requestAnimationFrame(checkDotCollision);
 }
 
-checkDotCollision();
-
-/*************
-    Cette fonction est rattachée à l'événement "Load".
-    C'est la première fonction qui va s'executer lorsque
-    la page sera entièrement chargée.
-**************/
 /**
  * Fonction d’initialisation appelée lorsque le DOM est entièrement chargé.
- * - Active le défilement fluide pour les liens internes commençant par "#".
- * - Ajoute l'écouteur de changement au sélecteur de langue.
- * - Applique immédiatement la langue sauvegardée ou par défaut.
  */
 function initialisation() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
+  checkDotCollision();
+  updateDotPosition();
+  alignDotToH1(); // set initial position
+  window.addEventListener("scroll", alignDotToH1, { passive: true });
+  window.addEventListener("resize", alignDotToH1);
 }
+
 window.addEventListener("DOMContentLoaded", initialisation);

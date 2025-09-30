@@ -10,13 +10,20 @@
   <meta name="robots" content="index, follow">
   <meta name="author" content="Bram Dev">
 
+  <meta property="og:title" content="Bram | Développement web réactif et sur mesure">
+  <meta property="og:description"
+    content="Bram développe des applications web rapides, réactives et personnalisées pour vos besoins numériques.">
+  <meta property="og:url" content="https://bramdev.ca/">
+  <meta property="og:image" content="https://bramdev.ca/images/preview.jpg">
+  <meta property="og:type" content="website">
+
   <meta http-equiv="content-language" content="fr">
   <link rel="alternate" hreflang="fr" href="https://bramdev.ca/">
   <link rel="alternate" hreflang="en" href="https://bramdev.ca/en/">
   <link rel="canonical" href="https://bramdev.ca/">
 
 
-  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="/css/style.css" rel="stylesheet" />
 
   <script defer src="/js/script.js"></script>
@@ -24,8 +31,8 @@
 
 <body>
   <header>
-    <nav>
-      <a href="mailto:team@bramdev.ca">écrivez-nous</a>
+    <nav id="main-nav">
+      <a href="mailto:team@bramdev.ca">contactez-nous</a>
       <p>|</p>
       <a href="/en/">
         en
@@ -40,19 +47,28 @@
     </div>
     <section class="s1">
       <h2 class="hidden">_nos&nbsp;&nbsp;services</h2>
-      <p class="hidden">
-        Développement web
-        Nous créons des sites vitrines et des applications web modernes, performantes et adaptées à tous les appareils.
 
-        Applications sur mesure
-        Nous développons des solutions personnalisées pour répondre exactement à vos besoins professionnels.
+      <div class="services-grid">
+        <div class="service hidden">
+          <h3>_développement web.</h3>
+          <p>sites vitrines, e-commerce, web apps modernes et réactives.</p>
+        </div>
 
-        Intégration API & bases de données
-        Nous assurons des connexions sécurisées et efficaces entre vos services, bases de données et applications.
+        <div class="service hidden">
+          <h3>_applications sur mesure.</h3>
+          <p>solutions parfaitement adaptées à vos besoins professionnels.</p>
+        </div>
 
-        Maintenance & optimisation
-        Nous suivons vos projets après lancement pour garantir performance, sécurité et évolutivité.
-      </p>
+        <div class="service hidden">
+          <h3>_intégration API & bases de données.</h3>
+          <p>connexions sécurisées et performantes entre vos services.</p>
+        </div>
+
+        <div class="service hidden">
+          <h3>_maintenance & optimisation.</h3>
+          <p>suivi, sécurité et évolutivité après le lancement.</p>
+        </div>
+      </div>
     </section>
   </main>
 

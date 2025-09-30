@@ -5,7 +5,7 @@
 .container {
   flex: 1;
   width: 90%;
-  max-width: 1800px;
+  max-width: auto;
   margin: 0 auto;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -18,10 +18,21 @@
 }
 
 .dot {
+  position: fixed;
+  top: 1;
+  left: 39%;
+  transform: translateX(-50%); /* position de base = centré */
   font-size: 10rem;
   color: white;
-  position: fixed;
   mix-blend-mode: difference;
+  z-index: 1;
+  transition: transform 0.4s ease; /* ✅ pour une transition fluide */
+  pointer-events: none;
+}
+
+/* Quand on veut la décaler vers la droite */
+.dot.dot-right {
+  transform: translateX(calc(-20% + 173px)); /* décale de ~100px */
 }
 
 .hidden {
@@ -45,6 +56,10 @@
   padding-top: 2rem;
   margin-top: 4rem;
   width: 100%;
+
+  h2 {
+    margin-bottom: 5rem;
+  }
 }
 
 .hero {
@@ -63,4 +78,45 @@
   grid-column: 2 / 3;
   display: flex;
   justify-content: start;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  text-align: center;
+
+  .service {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column; /* permet de pousser le p en bas */
+    justify-content: space-between; /* espace entre le h3 et le p */
+    align-items: center;
+    padding: 2rem;
+    border: 2px solid white;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+      border-color: #fff;
+    }
+  }
+  h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+  p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    letter-spacing: 0.05rem;
+    margin-top: auto;
+    color: #ddd;
+  }
 }
