@@ -9,6 +9,7 @@ const nav = document.getElementById('main-nav');
 const dot = document.querySelector(".dot");
 const section = document.querySelector(".s1");
 const heading = section.querySelector("h2");
+const p = section.querySelector("p");
 /**
  * Surveille la position du point (dot) par rapport à la section des services.
  * Active ou désactive les classes CSS "active" et "show" en fonction
