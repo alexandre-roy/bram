@@ -311,7 +311,7 @@ p {
   color: #ffffff;
 }
 .services-grid .service h3 {
-  font-size: clamp(2rem, 3vw, 3.5rem); /* Bigger service card titles */
+  font-size: clamp(1.6rem, 1.5vw, 2rem); /* Bigger service card titles */
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
   transition: color 0.3s ease;
