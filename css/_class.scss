@@ -9,7 +9,6 @@
   max-width: 1400px;
   margin: 0 auto;
   box-sizing: border-box;
-  overflow-x: hidden;
   padding: 0 1rem;
 }
 
@@ -32,7 +31,10 @@
   user-select: none;
   will-change: transform;
   transition: transform 0.3s ease;
-  line-height: 1;
+  line-height: 0.8; /* Tighter line height to match actual dot size */
+  width: fit-content; /* Only as wide as the dot character */
+  height: fit-content; /* Only as tall as the dot character */
+  display: inline-block;
 
   &:hover {
     transform: scale(1.1);

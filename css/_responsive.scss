@@ -88,6 +88,12 @@
 
   .dot {
     font-size: 8rem; /* Adjusted for bigger headings */
+    line-height: 0.75; /* Tighter on tablet */
+  }
+
+  /* Ensure dot stays visible on tablet */
+  .dot {
+    max-width: 100px; /* Prevent dot from being too large */
   }
 
   /* About Section - Stack vertically on tablets */
@@ -199,6 +205,13 @@
     .section-title {
       margin-bottom: 2rem;
     }
+  }
+
+  /* Dot - smaller and safer positioning on mobile */
+  .dot {
+    font-size: 5rem !important; /* Smaller on mobile to prevent overflow */
+    max-width: 80px;
+    line-height: 0.7; /* Even tighter on mobile */
   }
 
   /* About Section */

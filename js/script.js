@@ -31,8 +31,21 @@ let isUserScrolling = true;
  */
 function getH1Position() {
   const rect = heroH1.getBoundingClientRect();
-  const offsetX = window.innerWidth > 768 ? 20 : 10;
-  const offsetY = window.innerWidth > 768 ? -100 : -50;
+  const isMobile = window.innerWidth <= 480;
+  const isTablet = window.innerWidth <= 768;
+
+  let offsetX, offsetY;
+
+  if (isMobile) {
+    offsetX = 5; // Very small gap on mobile
+    offsetY = -30;
+  } else if (isTablet) {
+    offsetX = 10;
+    offsetY = -50;
+  } else {
+    offsetX = 20;
+    offsetY = -100;
+  }
 
   return {
     x: rect.right + offsetX,
@@ -51,15 +64,38 @@ function getSectionPosition(section) {
 
   if (sectionTitle) {
     const rect = sectionTitle.getBoundingClientRect();
+    const isMobile = window.innerWidth <= 480;
+    const isTablet = window.innerWidth <= 768;
 
-    // Position dot to the RIGHT of the title
-    const offsetX = window.innerWidth > 768 ? 20 : 10; // Small gap from title
-    const offsetY = 0; // Center vertically
+    // Adjust offset based on screen size
+    let offsetX, offsetY;
 
-    return {
-      x: rect.right + offsetX, // Right side of title + gap
-      y: rect.top + (rect.height / 2) + offsetY // Vertically centered
-    };
+    if (isMobile) {
+      // On mobile, position dot more carefully to stay in viewport
+      offsetX = 5; // Very small gap
+      offsetY = 0;
+    } else if (isTablet) {
+      offsetX = 10; // Small gap on tablet
+      offsetY = 0;
+    } else {
+      offsetX = 20; // Normal gap on desktop
+      offsetY = 0;
+    }
+
+    // Calculate position
+    let x = rect.right + offsetX;
+    const y = rect.top + (rect.height / 2) + offsetY;
+
+    // Safety check: if dot would go off-screen, position it at safe distance from right edge
+    const dotWidth = isMobile ? 80 : (isTablet ? 100 : 150); // Approximate dot width
+    const viewportWidth = window.innerWidth;
+    const maxX = viewportWidth - dotWidth - 10; // 10px margin from edge
+
+    if (x + dotWidth > viewportWidth) {
+      x = maxX;
+    }
+
+    return { x, y };
   }
 
   // Fallback if no title found

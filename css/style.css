@@ -170,7 +170,6 @@ p {
   max-width: 1400px;
   margin: 0 auto;
   box-sizing: border-box;
-  overflow-x: hidden;
   padding: 0 1rem;
 }
 
@@ -195,7 +194,12 @@ p {
           user-select: none;
   will-change: transform;
   transition: transform 0.3s ease;
-  line-height: 1;
+  line-height: 0.8; /* Tighter line height to match actual dot size */
+  width: -moz-fit-content;
+  width: fit-content; /* Only as wide as the dot character */
+  height: -moz-fit-content;
+  height: fit-content; /* Only as tall as the dot character */
+  display: inline-block;
 }
 .dot:hover {
   transform: scale(1.1);
@@ -651,6 +655,11 @@ p {
   }
   .dot {
     font-size: 8rem; /* Adjusted for bigger headings */
+    line-height: 0.75; /* Tighter on tablet */
+  }
+  /* Ensure dot stays visible on tablet */
+  .dot {
+    max-width: 100px; /* Prevent dot from being too large */
   }
   /* About Section - Stack vertically on tablets */
   .about-content {
@@ -739,6 +748,12 @@ p {
   }
   .s1 .section-title {
     margin-bottom: 2rem;
+  }
+  /* Dot - smaller and safer positioning on mobile */
+  .dot {
+    font-size: 5rem !important; /* Smaller on mobile to prevent overflow */
+    max-width: 80px;
+    line-height: 0.7; /* Even tighter on mobile */
   }
   /* About Section */
   .about-section {
