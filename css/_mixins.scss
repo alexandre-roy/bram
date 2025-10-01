@@ -1,8 +1,11 @@
 /* Mixins */
+
+// Text color
 @mixin text($color) {
   color: $color;
 }
 
+// Button styling
 @mixin button($bg, $color) {
   background-color: $bg;
   color: $color;
@@ -10,4 +13,49 @@
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Flexbox centering
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Card effect
+@mixin card-effect {
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.15);
+  }
+}
+
+// Responsive breakpoints
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 1024px) {
+    @content;
+  }
 }

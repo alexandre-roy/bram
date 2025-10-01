@@ -1,59 +1,22 @@
+/* Main SCSS File - Imports Only */
+
+// 1. Configuration & Variables
 @use "variables" as v;
 @use "mixins";
-@use "class";
+
+// 2. Fonts
 @use "fonts";
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+// 3. Layout & Structure
+@use "layout";
 
-/* Styles */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: auto;
-  min-height: 100%;
-}
+// 4. Typography
+@use "typography";
 
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: v.$font-primary;
-  background-color: white;
-  box-sizing: border-box;
-}
+// 5. Components & Classes
+@use "class";
 
-nav {
-  display: flex;
-  justify-content: end;
-  padding-top: 1.5rem;
-  padding-right: 1rem;
-  a,
-  p {
-    font-family: v.$font-primary;
-    margin-right: 1rem;
-    text-decoration: none;
-    color: black;
-    font-size: 1.5rem;
-  }
-}
+// 6. Responsive Design
+@use "responsive";
 
-h1 {
-  font-size: 10rem;
-}
-
-footer {
-  align-self: center;
-  margin: 3rem;
-}
-
-@media (max-width: 600px) {
-  nav a {
-    margin: 10px 0;
-  }
-}
-@media (max-width: 1400px) {
-}
+/* That's it! All styles are organized in their respective files */

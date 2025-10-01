@@ -1,0 +1,351 @@
+/* Responsive Media Queries */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .hero {
+    gap: 1.5rem;
+    padding: 3rem 0;
+  }
+
+  .s1 {
+    padding: 3rem 1rem;
+  }
+
+  .about-content {
+    gap: 3rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+
+    .nav-link,
+    .nav-separator {
+      font-size: 1.2rem;
+      margin-right: 0.8rem;
+    }
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    padding: 2rem 0;
+
+    h1 {
+      grid-column: 1;
+      justify-self: center;
+      text-align: center;
+    }
+
+    p {
+      grid-row: 2;
+      grid-column: 1;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+
+    .service {
+      padding: 2rem;
+
+      h3 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .s1 {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+
+    .section-title {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .dot {
+    font-size: 8rem; /* Adjusted for bigger headings */
+  }
+
+  /* About Section - Stack vertically on tablets */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    .about-image {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+
+      &.about-intro {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .about-section,
+  .projects-section,
+  .cta-section {
+    padding: 3rem 1rem;
+  }
+
+  /* Projects - Single column */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* CTA */
+  .cta-content {
+    h2 {
+      font-size: 2rem;
+    }
+
+    > p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .cta-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Scroll to top button - smaller on tablets */
+  .scroll-top-btn {
+    width: 45px;
+    height: 45px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+
+    span {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
+
+  nav {
+    padding: 1rem 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .nav-link,
+    .nav-separator {
+      font-size: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .hero {
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+  }
+
+  .services-grid {
+    gap: 1.5rem;
+    padding: 0.5rem;
+
+    .service {
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .s1 {
+    padding: 2rem 0.5rem;
+
+    .section-title {
+      margin-bottom: 2rem;
+    }
+  }
+
+  /* About Section */
+  .about-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .about-content {
+    gap: 1.5rem;
+
+    .about-text p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+
+      &.about-intro {
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  /* Projects Section */
+  .projects-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .projects-grid {
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    .project-image {
+      height: 200px;
+    }
+
+    .project-info {
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+
+    .project-tech span {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .cta-content {
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    > p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-email {
+      font-size: 0.95rem;
+    }
+  }
+
+  .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Scroll to top button - smaller on mobile */
+  .scroll-top-btn {
+    width: 40px;
+    height: 40px;
+    bottom: 1rem;
+    right: 1rem;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Footer */
+  footer {
+    margin: 2rem 1rem;
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .services-grid .service {
+    padding: 1rem;
+
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+
+    &.about-intro {
+      font-size: 1rem;
+    }
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support (optional, for future) */
+@media (prefers-color-scheme: dark) {
+  // Can add dark mode adjustments here if needed
+}

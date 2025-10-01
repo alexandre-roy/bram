@@ -9,72 +9,171 @@
     content="Bram développe des applications web rapides, réactives et personnalisées pour vos besoins numériques.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Bram Dev">
-
   <meta property="og:title" content="Bram | Développement web réactif et sur mesure">
   <meta property="og:description"
     content="Bram développe des applications web rapides, réactives et personnalisées pour vos besoins numériques.">
   <meta property="og:url" content="https://bramdev.ca/">
   <meta property="og:image" content="https://bramdev.ca/images/preview.jpg">
   <meta property="og:type" content="website">
-
   <meta http-equiv="content-language" content="fr">
   <link rel="alternate" hreflang="fr" href="https://bramdev.ca/">
   <link rel="alternate" hreflang="en" href="https://bramdev.ca/en/">
   <link rel="canonical" href="https://bramdev.ca/">
-
-
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="/css/style.css" rel="stylesheet" />
-
   <script defer src="/js/script.js"></script>
 </head>
 
 <body>
   <header>
     <nav id="main-nav">
-      <a href="mailto:team@bramdev.ca">contactez-nous</a>
-      <p>|</p>
-      <a href="/en/">
-        en
-      </a>
+      <a href="#services" class="nav-link">services</a>
+      <a href="#about" class="nav-link">à propos</a>
+      <a href="#projects" class="nav-link">réalisations</a>
+      <a href="#contact" class="nav-link">contact</a>
+      <p class="nav-separator">|</p>
+      <a href="/en/" class="nav-link">en</a>
     </nav>
   </header>
 
   <main>
+    <!-- Hero Section -->
     <div class="container hero">
       <h1>_bram<span class="dot">.</span></h1>
       <p class="slogan">"bâtir des réalisations applicatives maîtrisées"</p>
     </div>
-    <section class="s1">
-      <h2 class="hidden">_nos&nbsp;&nbsp;services</h2>
 
-      <div class="services-grid">
-        <div class="service hidden">
-          <h3>_développement web.</h3>
-          <p>sites vitrines, e-commerce, web apps modernes et réactives.</p>
+    <!-- Services Section -->
+    <section class="s1" id="services">
+      <div class="container">
+        <h2 class="section-title hidden">_nos&nbsp;&nbsp;services</h2>
+        <div class="services-grid">
+          <div class="service hidden" data-delay="0">
+            <h3>_développement web.</h3>
+            <p>sites vitrines, e-commerce, web apps modernes et réactives.</p>
+          </div>
+          <div class="service hidden" data-delay="100">
+            <h3>_applications sur mesure.</h3>
+            <p>solutions parfaitement adaptées à vos besoins professionnels.</p>
+          </div>
+          <div class="service hidden" data-delay="200">
+            <h3>_intégration API & bases de données.</h3>
+            <p>connexions sécurisées et performantes entre vos services.</p>
+          </div>
+          <div class="service hidden" data-delay="300">
+            <h3>_maintenance & optimisation.</h3>
+            <p>suivi, sécurité et évolutivité après le lancement.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="service hidden">
-          <h3>_applications sur mesure.</h3>
-          <p>solutions parfaitement adaptées à vos besoins professionnels.</p>
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <h2 class="section-title hidden">_à propos</h2>
+        <div class="about-content hidden">
+          <div class="about-image">
+            <img src="/images/team.jpg" alt="Équipe Bram" loading="lazy" />
+          </div>
+          <div class="about-text">
+            <p class="about-intro">
+              <strong>_bram.</strong> est une jeune équipe passionnée par la création d'applications réactives et
+              modernes.
+            </p>
+            <p>
+              Notre objectif : des solutions claires, performantes et durables qui répondent précisément à vos besoins
+              numériques.
+            </p>
+            <p>
+              Nous combinons expertise technique et approche humaine pour transformer vos idées en réalité digitale.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="service hidden">
-          <h3>_intégration API & bases de données.</h3>
-          <p>connexions sécurisées et performantes entre vos services.</p>
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <h2 class="section-title hidden">_réalisations</h2>
+        <div class="projects-grid">
+          <div class="project-card hidden" data-delay="0">
+            <div class="project-image">
+              <img src="/images/project1.jpg" alt="Projet 1" loading="lazy" />
+              <div class="project-overlay">
+                <span class="project-tag">Web App</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Application de gestion</h3>
+              <p>Plateforme web moderne pour la gestion d'équipes et de projets avec dashboard interactif.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card hidden" data-delay="100">
+            <div class="project-image">
+              <img src="/images/project2.jpg" alt="Projet 2" loading="lazy" />
+              <div class="project-overlay">
+                <span class="project-tag">E-commerce</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Boutique en ligne</h3>
+              <p>Site e-commerce performant avec système de paiement sécurisé et gestion des stocks.</p>
+              <div class="project-tech">
+                <span>Next.js</span>
+                <span>Stripe</span>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card hidden coming-soon" data-delay="200">
+            <div class="project-image coming-soon-image">
+              <div class="coming-soon-content">
+                <span>🚀</span>
+                <p>Bientôt disponible</p>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Nouveaux projets en cours</h3>
+              <p>Nous travaillons actuellement sur de nouvelles réalisations passionnantes. Restez à l'écoute!</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="service hidden">
-          <h3>_maintenance & optimisation.</h3>
-          <p>suivi, sécurité et évolutivité après le lancement.</p>
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+      <div class="container">
+        <div class="cta-content hidden">
+          <h2>_prêt à démarrer votre projet?</h2>
+          <p>Discutons de votre vision et transformons-la en réalité.</p>
+          <a href="mailto:team@bramdev.ca" class="cta-button">
+            Contactez-nous
+            <span class="arrow">→</span>
+          </a>
+          <p class="cta-email">team@bramdev.ca</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 - Tous droits réservés</p>
+    <p>&copy; 2025 _bram. - Tous droits réservés</p>
   </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" class="scroll-top-btn" aria-label="Retour en haut">
+    <span>↑</span>
+  </button>
 </body>
 
 </html>
