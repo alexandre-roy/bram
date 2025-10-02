@@ -6,23 +6,23 @@
 function initScrollAnimations() {
   const observerOptions = {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.1
+    rootMargin: "0px",
+    threshold: 0.1,
   };
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const delay = entry.target.dataset.delay || 0;
         setTimeout(() => {
-          entry.target.classList.add('show');
+          entry.target.classList.add("show");
         }, delay);
       }
     });
   }, observerOptions);
 
   // Observe all hidden elements
-  document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+  document.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
 }
 
 /**
@@ -39,12 +39,12 @@ function handleResize() {
 function initSmoothScroll() {
   const navLinks = document.querySelectorAll('a[href^="#"]');
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
-      const targetId = link.getAttribute('href');
+      const targetId = link.getAttribute("href");
 
-      if (targetId === '#') return;
+      if (targetId === "#") return;
 
       const targetSection = document.querySelector(targetId);
 
@@ -53,7 +53,7 @@ function initSmoothScroll() {
 
         window.scrollTo({
           top: offsetTop,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
         history.pushState(null, null, targetId);
       }
@@ -67,7 +67,7 @@ function initSmoothScroll() {
         const offsetTop = targetSection.offsetTop - 80;
         window.scrollTo({
           top: offsetTop,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       }
     }, 100);
@@ -76,49 +76,51 @@ function initSmoothScroll() {
 
 // Interactions
 function addInteractivity() {
-  const services = document.querySelectorAll('.service');
-  services.forEach(service => {
-    service.addEventListener('mouseenter', function () {
-      this.style.transform = 'translateY(-15px) scale(1.02)';
+  const services = document.querySelectorAll(".service");
+  services.forEach((service) => {
+    service.addEventListener("mouseenter", function () {
+      this.style.transform = "translateY(-15px) scale(1.02)";
     });
 
-    service.addEventListener('mouseleave', function () {
-      this.style.transform = 'translateY(0) scale(1)';
+    service.addEventListener("mouseleave", function () {
+      this.style.transform = "translateY(0) scale(1)";
     });
   });
 
   // Project card interactions
-  const projectCards = document.querySelectorAll('.project-card:not(.coming-soon)');
-  projectCards.forEach(card => {
-    card.addEventListener('mouseenter', function () {
-      const overlay = this.querySelector('.project-overlay');
+  const projectCards = document.querySelectorAll(
+    ".project-card:not(.coming-soon)"
+  );
+  projectCards.forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      const overlay = this.querySelector(".project-overlay");
       if (overlay) {
-        overlay.style.opacity = '1';
+        overlay.style.opacity = "1";
       }
     });
 
-    card.addEventListener('mouseleave', function () {
-      const overlay = this.querySelector('.project-overlay');
+    card.addEventListener("mouseleave", function () {
+      const overlay = this.querySelector(".project-overlay");
       if (overlay) {
-        overlay.style.opacity = '0';
+        overlay.style.opacity = "0";
       }
     });
   });
 
   // CTA button hover effect
-  const ctaButton = document.querySelector('.cta-button');
+  const ctaButton = document.querySelector(".cta-button");
   if (ctaButton) {
-    ctaButton.addEventListener('mouseenter', function () {
-      const arrow = this.querySelector('.arrow');
+    ctaButton.addEventListener("mouseenter", function () {
+      const arrow = this.querySelector(".arrow");
       if (arrow) {
-        arrow.style.transform = 'translateX(5px)';
+        arrow.style.transform = "translateX(5px)";
       }
     });
 
-    ctaButton.addEventListener('mouseleave', function () {
-      const arrow = this.querySelector('.arrow');
+    ctaButton.addEventListener("mouseleave", function () {
+      const arrow = this.querySelector(".arrow");
       if (arrow) {
-        arrow.style.transform = 'translateX(0)';
+        arrow.style.transform = "translateX(0)";
       }
     });
   }
@@ -129,7 +131,7 @@ function init() {
   initScrollAnimations();
 
   // Event listeners
-  window.addEventListener('resize', handleResize, { passive: true });
+  window.addEventListener("resize", handleResize, { passive: true });
 
   // Initialize features
   addInteractivity();
@@ -138,8 +140,8 @@ function init() {
 }
 
 // Start when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
 } else {
   init();
 }
