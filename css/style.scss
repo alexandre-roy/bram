@@ -1,22 +1,18 @@
-/* Main SCSS File - Imports Only */
-
-// 1. Configuration & Variables
+// Configuration & Variables
 @use "variables" as v;
 @use "mixins";
 
-// 2. Fonts
+// Fonts
 @use "fonts";
 
-// 3. Layout & Structure
+// Layout & Structure
 @use "layout";
 
-// 4. Typography
+// Typography
 @use "typography";
 
-// 5. Components & Classes
+// Components & Classes
 @use "class";
 
-// 6. Responsive Design
+// Responsive Design
 @use "responsive";
-
-/* That's it! All styles are organized in their respective files */

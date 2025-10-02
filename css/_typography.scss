@@ -1,21 +1,18 @@
-/* Typography Styles */
-
-/* Headings - Larger and more proportional */
 h1 {
-  font-size: clamp(6rem, 15vw, 15rem); /* Much bigger - was 10rem max */
+  font-size: clamp(6rem, 15vw, 15rem);
   line-height: 1;
   position: relative;
   font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(3.5rem, 8vw, 8rem); /* Much bigger - was 5rem max */
+  font-size: clamp(3.5rem, 8vw, 8rem);
   line-height: 1.1;
   font-weight: 700;
 }
 
-h3 {
-  font-size: clamp(2rem, 4vw, 4rem); /* Much bigger - was 2.5rem max */
+h3 { 
+  font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1.2;
   font-weight: 600;
 }
