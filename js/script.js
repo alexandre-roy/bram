@@ -136,7 +136,6 @@ function init() {
   // Initialize features
   addInteractivity();
   initSmoothScroll();
-  initParallax();
 }
 
 // Start when DOM is ready
