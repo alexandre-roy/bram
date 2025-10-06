@@ -12,9 +12,10 @@
 
 // Slogan
 .slogan {
-  font-family: v.$font-primary;
+  font-family: v.$font-secondary-italic;
   font-weight: 800;
   font-size: clamp(1rem, 2.5vw, 1.5rem);
+  padding-bottom: 4rem;
   color: black;
 }
 
@@ -37,7 +38,7 @@
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  padding: 4rem 0;
+  padding-top: 4rem;
   min-height: 60vh;
   align-items: center;
 
