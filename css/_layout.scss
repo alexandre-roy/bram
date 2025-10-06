@@ -39,10 +39,26 @@ header {
 
 nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
   position: relative;
+
+  .instagram-link {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+
+    .instagram-icon {
+      height: 50px;
+      width: 50px;
+      transition: opacity v.$transition-fast;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
 
   .nav-link,
   .nav-separator {
