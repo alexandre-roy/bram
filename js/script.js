@@ -6,7 +6,7 @@
 function initScrollAnimations() {
   const observerOptions = {
     root: null,
-    rootMargin: "0px",
+    rootMargin: "-135px 0px -150px 0px",
     threshold: 0.1,
   };
 
@@ -21,7 +21,6 @@ function initScrollAnimations() {
     });
   }, observerOptions);
 
-  // Observe all hidden elements
   document.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
 }
 
