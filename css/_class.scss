@@ -64,7 +64,7 @@
 }
 
 // Services Section
-.s1 {
+.services-section {
   background-color: black;
   min-height: 100vh;
   padding: 4rem 2rem;
@@ -300,13 +300,13 @@
 }
 
 // Contact Section
-.cta-section {
+.contact-section {
   padding: 4rem 2rem;
   background: #fff;
   text-align: center;
 }
 
-.cta-content {
+.contact-content {
   max-width: 800px;
   margin: 0 auto;
 
@@ -323,7 +323,7 @@
   }
 }
 
-.cta-button {
+.contact-button {
   display: inline-flex;
   align-items: center;
   gap: 1rem;

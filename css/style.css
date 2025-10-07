@@ -197,14 +197,14 @@ p {
   position: relative;
 }
 
-.s1 {
+.services-section {
   background-color: black;
   min-height: 100vh;
   padding: 4rem 2rem;
   width: 100%;
   position: relative;
 }
-.s1 .section-title {
+.services-section .section-title {
   color: white;
 }
 
@@ -400,28 +400,28 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.cta-section {
+.contact-section {
   padding: 4rem 2rem;
   background: #fff;
   text-align: center;
 }
 
-.cta-content {
+.contact-content {
   max-width: 800px;
   margin: 0 auto;
 }
-.cta-content h2 {
+.contact-content h2 {
   color: black;
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 2rem;
 }
-.cta-content p {
+.contact-content p {
   color: black;
   font-size: 1.3rem;
   margin-bottom: 4rem;
 }
 
-.cta-button {
+.contact-button {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
@@ -435,19 +435,19 @@ p {
   transition: all 0.3s ease;
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
-.cta-button .arrow {
+.contact-button .arrow {
   size: 1.5rem;
   transition: transform 0.3s ease;
 }
-.cta-button:hover {
+.contact-button:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgb(0, 255, 55);
   background: black;
 }
-.cta-button:hover .arrow {
+.contact-button:hover .arrow {
   transform: translateX(5px);
 }
-.cta-button:active {
+.contact-button:active {
   transform: translateY(-2px);
 }
 
@@ -477,7 +477,7 @@ p {
   .hero .slogan {
     padding-bottom: 0;
   }
-  .s1 {
+  .services-section {
     padding: 3rem 1rem;
   }
   .about-content {
@@ -511,11 +511,11 @@ p {
   .services-grid .service p {
     font-size: 1.1rem;
   }
-  .s1 {
+  .services-section {
     padding: 2rem 1rem;
     margin-top: 2rem;
   }
-  .s1 .section-title {
+  .services-section .section-title {
     margin-bottom: 3rem;
   }
   .about-content {
@@ -534,7 +534,7 @@ p {
   }
   .about-section,
   .projects-section,
-  .cta-section {
+  .contact-section {
     padding: 3rem 1rem;
   }
   footer {
@@ -544,13 +544,13 @@ p {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  .cta-content h2 {
+  .contact-content h2 {
     font-size: 2rem;
   }
-  .cta-content p {
+  .contact-content p {
     font-size: 1.1rem;
   }
-  .cta-button {
+  .contact-button {
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
   }
@@ -588,10 +588,10 @@ p {
   .services-grid .service p {
     font-size: 1rem;
   }
-  .s1 {
+  .services-section {
     padding: 2rem 0.5rem;
   }
-  .s1 .section-title {
+  .services-section .section-title {
     margin-bottom: 2rem;
   }
   .about-section {
@@ -629,18 +629,18 @@ p {
     font-size: 0.75rem;
     padding: 0.3rem 0.6rem;
   }
-  .cta-section {
+  .contact-section {
     padding: 2rem 0.5rem;
   }
-  .cta-content h2 {
+  .contact-content h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
-  .cta-content p {
+  .contact-content p {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
-  .cta-button {
+  .contact-button {
     padding: 1rem 2rem;
     font-size: 1rem;
     width: 100%;
@@ -673,7 +673,7 @@ p {
   .about-text p.about-intro {
     font-size: 1rem;
   }
-  .cta-button {
+  .contact-button {
     padding: 0.8rem 1.5rem;
     font-size: 0.95rem;
   }
