@@ -6,7 +6,6 @@
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
-  box-sizing: border-box;
   padding: 0 1rem;
 }
 
@@ -103,15 +102,6 @@
     &::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0) 100%
-      );
       opacity: 0;
       transition: opacity v.$transition-medium;
     }
@@ -227,10 +217,14 @@
   transition: all v.$transition-smooth;
   border: 1px solid rgba(255, 255, 255, 0.1);
 
-  &:hover:not(.coming-soon) {
+  &:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
+
+    .project-overlay {
+      opacity: 1 !important;
+    }
   }
 
   .project-image {

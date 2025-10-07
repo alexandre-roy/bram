@@ -1,163 +1,38 @@
 "use strict";
 
-/**
- * Intersection Observer for scroll-triggered animations
- */
-function initScrollAnimations() {
-  let hasScrolled = false;
+function scrollAnimations() {
+  let userHasScrolled = false;
+  const elementsToAnimate = document.querySelectorAll(".hidden");
 
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1,
-  };
+  function checkIfElementIsVisible() {
+    elementsToAnimate.forEach((element) => {
+      if (element.classList.contains("show")) {
+        return;
+      }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      // Only animate if user has scrolled
-      if (entry.isIntersecting && hasScrolled) {
-        const delay = entry.target.dataset.delay || 0;
+      const rect = element.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const isVisible = rect.top < windowHeight && rect.bottom > 0;
+
+      if (isVisible) {
+        const delay = element.dataset.delay || 0;
         setTimeout(() => {
-          entry.target.classList.add("show");
+          element.classList.add("show");
         }, delay);
       }
     });
-  }, observerOptions);
+  }
 
-  // Observe all hidden elements
-  document.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
-
-  // Listen for scroll event
   window.addEventListener('scroll', () => {
-    if (!hasScrolled) {
-      hasScrolled = true;
-      // Re-check all observed elements now that scrolling has started
-      document.querySelectorAll(".hidden").forEach((el) => {
-        if (observer.observe) {
-          observer.unobserve(el);
-          observer.observe(el);
-        }
-      });
+    if (!userHasScrolled) {
+      userHasScrolled = true;
     }
-  }, { once: false });
-}
-
-/**
- * Handle window resize
- */
-let resizeTimeout;
-function handleResize() {
-  // Reserved for future resize handling
-}
-
-/**
- * Smooth scroll for navigation links with offset
- */
-function initSmoothScroll() {
-  const navLinks = document.querySelectorAll('a[href^="#"]');
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute("href");
-
-      if (targetId === "#") return;
-
-      const targetSection = document.querySelector(targetId);
-
-      if (targetSection) {
-        const offsetTop = targetSection.offsetTop - 80;
-
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth",
-        });
-        history.pushState(null, null, targetId);
-      }
-    });
+    checkIfElementIsVisible();
   });
-
-  if (window.location.hash) {
-    setTimeout(() => {
-      const targetSection = document.querySelector(window.location.hash);
-      if (targetSection) {
-        const offsetTop = targetSection.offsetTop - 80;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth",
-        });
-      }
-    }, 100);
-  }
-}
-
-// Interactions
-function addInteractivity() {
-  const services = document.querySelectorAll(".service");
-  services.forEach((service) => {
-    service.addEventListener("mouseenter", function () {
-      this.style.transform = "translateY(-15px) scale(1.02)";
-    });
-
-    service.addEventListener("mouseleave", function () {
-      this.style.transform = "translateY(0) scale(1)";
-    });
-  });
-
-  // Project card interactions
-  const projectCards = document.querySelectorAll(
-    ".project-card:not(.coming-soon)"
-  );
-  projectCards.forEach((card) => {
-    card.addEventListener("mouseenter", function () {
-      const overlay = this.querySelector(".project-overlay");
-      if (overlay) {
-        overlay.style.opacity = "1";
-      }
-    });
-
-    card.addEventListener("mouseleave", function () {
-      const overlay = this.querySelector(".project-overlay");
-      if (overlay) {
-        overlay.style.opacity = "0";
-      }
-    });
-  });
-
-  // CTA button hover effect
-  const ctaButton = document.querySelector(".cta-button");
-  if (ctaButton) {
-    ctaButton.addEventListener("mouseenter", function () {
-      const arrow = this.querySelector(".arrow");
-      if (arrow) {
-        arrow.style.transform = "translateX(5px)";
-      }
-    });
-
-    ctaButton.addEventListener("mouseleave", function () {
-      const arrow = this.querySelector(".arrow");
-      if (arrow) {
-        arrow.style.transform = "translateX(0)";
-      }
-    });
-  }
 }
 
 function init() {
-  // Start animations
-  initScrollAnimations();
-
-  // Event listeners
-  window.addEventListener("resize", handleResize, { passive: true });
-
-  // Initialize features
-  addInteractivity();
-  initSmoothScroll();
+  scrollAnimations();
 }
 
-// Start when DOM is ready
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
+document.addEventListener("DOMContentLoaded", init);

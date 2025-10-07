@@ -9,14 +9,12 @@
   font-family: "PlayfairDisplay";
   src: url("../fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
-  font-stretch: 75% 125%;
   font-style: normal;
 }
 @font-face {
   font-family: "PlayfairDisplay Italic";
   src: url("../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
-  font-stretch: 75% 125%;
   font-style: normal;
 }
 * {
@@ -43,7 +41,6 @@ body {
   flex-direction: column;
   font-family: "Outfit", sans-serif;
   background-color: white;
-  box-sizing: border-box;
   overflow-x: hidden;
   position: relative;
 }
@@ -150,7 +147,6 @@ p {
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
-  box-sizing: border-box;
   padding: 0 1rem;
 }
 
@@ -239,11 +235,6 @@ p {
 .services-grid .service::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -341,10 +332,13 @@ p {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.project-card:hover:not(.coming-soon) {
+.project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
+}
+.project-card:hover .project-overlay {
+  opacity: 1 !important;
 }
 .project-card .project-image {
   position: relative;
@@ -645,9 +639,6 @@ p {
   .cta-content p {
     font-size: 1rem;
     margin-bottom: 2rem;
-  }
-  .cta-content .cta-email {
-    font-size: 0.95rem;
   }
   .cta-button {
     padding: 1rem 2rem;
