@@ -4,15 +4,18 @@
  * Intersection Observer for scroll-triggered animations
  */
 function initScrollAnimations() {
+  let hasScrolled = false;
+
   const observerOptions = {
     root: null,
-    rootMargin: "0px 0px -170px 0px",
+    rootMargin: "0px",
     threshold: 0.1,
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+      // Only animate if user has scrolled
+      if (entry.isIntersecting && hasScrolled) {
         const delay = entry.target.dataset.delay || 0;
         setTimeout(() => {
           entry.target.classList.add("show");
@@ -21,7 +24,22 @@ function initScrollAnimations() {
     });
   }, observerOptions);
 
+  // Observe all hidden elements
   document.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
+
+  // Listen for scroll event
+  window.addEventListener('scroll', () => {
+    if (!hasScrolled) {
+      hasScrolled = true;
+      // Re-check all observed elements now that scrolling has started
+      document.querySelectorAll(".hidden").forEach((el) => {
+        if (observer.observe) {
+          observer.unobserve(el);
+          observer.observe(el);
+        }
+      });
+    }
+  }, { once: false });
 }
 
 /**
