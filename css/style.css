@@ -86,21 +86,11 @@ nav .nav-separator {
   font-size: 1.5rem;
   transition: color 0.3s ease;
   position: relative;
+  font-weight: 500;
 }
-nav .nav-link::after,
-nav .nav-separator::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: black;
-  transition: width 0.3s ease;
-}
-nav .nav-link:hover::after,
-nav .nav-separator:hover::after {
-  width: 100%;
+nav .nav-link:hover,
+nav .nav-separator:hover {
+  opacity: 0.7;
 }
 nav .nav-separator {
   -webkit-user-select: none;
@@ -117,7 +107,7 @@ main {
 
 footer {
   align-self: center;
-  padding: 2rem;
+  padding-bottom: 4rem;
   text-align: center;
 }
 footer p {
@@ -206,7 +196,7 @@ p {
 }
 
 .section-title {
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
   text-align: center;
   position: relative;
 }
@@ -286,7 +276,7 @@ p {
 }
 
 .about-section {
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
   background-color: white;
 }
 .about-section .section-title {
@@ -329,7 +319,7 @@ p {
 }
 
 .projects-section {
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
   background-color: black;
 }
 .projects-section .section-title {
@@ -417,7 +407,7 @@ p {
 }
 
 .cta-section {
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
   background: #fff;
   text-align: center;
 }
@@ -473,6 +463,27 @@ p {
     gap: 2rem;
     padding: 1rem;
   }
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0;
+    padding: 0;
+    min-height: 30vh;
+  }
+  .hero h1 {
+    grid-column: 1;
+    justify-self: center;
+    text-align: center;
+  }
+  .hero p {
+    grid-row: 2;
+    grid-column: 1;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero .slogan {
+    padding-bottom: 0;
+  }
   .s1 {
     padding: 3rem 1rem;
   }
@@ -492,26 +503,6 @@ p {
   nav .nav-separator {
     font-size: 1.2rem;
     margin-right: 0.8rem;
-  }
-  .hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    gap: 0;
-    padding: 0;
-  }
-  .hero h1 {
-    grid-column: 1;
-    justify-self: center;
-    text-align: center;
-  }
-  .hero p {
-    grid-row: 2;
-    grid-column: 1;
-    justify-content: center;
-    text-align: center;
-  }
-  .hero .slogan {
-    padding-bottom: 0;
   }
   .services-grid {
     grid-template-columns: 1fr;
@@ -553,6 +544,9 @@ p {
   .cta-section {
     padding: 3rem 1rem;
   }
+  footer {
+    padding-bottom: 3rem;
+  }
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -560,7 +554,7 @@ p {
   .cta-content h2 {
     font-size: 2rem;
   }
-  .cta-content > p {
+  .cta-content p {
     font-size: 1.1rem;
   }
   .cta-button {
@@ -649,7 +643,7 @@ p {
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
-  .cta-content > p {
+  .cta-content p {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
@@ -662,11 +656,11 @@ p {
     width: 100%;
     justify-content: center;
   }
-  footer {
-    margin: 2rem 1rem;
-  }
   footer p {
     font-size: 0.9rem;
+  }
+  footer {
+    padding-bottom: 2rem;
   }
 }
 @media (max-width: 768px) and (max-width: 360px) {

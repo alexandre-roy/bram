@@ -69,21 +69,11 @@ nav {
     font-size: 1.5rem;
     transition: color v.$transition-fast;
     position: relative;
+    font-weight: 500;
 
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: black;
-      transition: width v.$transition-fast;
-    }
-
-    &:hover::after {
-      width: 100%;
-    }
+    &:hover {
+        opacity: 0.7;
+      }
   }
 
   .nav-separator {
@@ -101,7 +91,7 @@ main {
 
 footer {
   align-self: center;
-  padding: 2rem;
+  padding-bottom: 4rem;
   text-align: center;
 
   p{

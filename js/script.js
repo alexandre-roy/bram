@@ -6,7 +6,7 @@
 function initScrollAnimations() {
   const observerOptions = {
     root: null,
-    rootMargin: "-135px 0px -150px 0px",
+    rootMargin: "0px 0px -170px 0px",
     threshold: 0.1,
   };
 
